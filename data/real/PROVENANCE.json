@@ -1,0 +1,253 @@
+{
+  "source": "Dune Analytics (DuneSQL via dune CLI)",
+  "fetched_at_utc": "2026-09-11T19:38:33.295062+00:00",
+  "tables": {
+    "payment_size_buckets": {
+      "status": "ok",
+      "sql": "SELECT * FROM dune.twzrd_analyst.dataset_twzrd_x402_payment_size ORDER BY sort",
+      "table_path": "data/real/payment_size_buckets.csv",
+      "rows": 5,
+      "columns": [
+        "sort",
+        "bucket",
+        "payments",
+        "usdc_volume"
+      ],
+      "sha256": "ccf98a1eb1efee3d0ac4dbb33002979d3d9ad88e9c751e21929e2f60fe0dd72b"
+    },
+    "merchant_concentration_tiers": {
+      "status": "ok",
+      "sql": "SELECT * FROM dune.twzrd_analyst.result_x402_merchant_concentration",
+      "table_path": "data/real/merchant_concentration_tiers.csv",
+      "rows": 5,
+      "columns": [
+        "tier",
+        "pct_of_revenue"
+      ],
+      "sha256": "349784fbd99f9f8f538111ceab83be7465abf9a22f7083bb163bfb9a6a76a3d1"
+    },
+    "merchant_revenue_concentration": {
+      "status": "ok",
+      "sql": "SELECT * FROM dune.twzrd_analyst.dataset_twzrd_x402_v3_merchant_revenue_concentration",
+      "table_path": "data/real/merchant_revenue_concentration.csv",
+      "rows": 5,
+      "columns": [
+        "tier",
+        "pct_of_revenue"
+      ],
+      "sha256": "a38f70ca32483de0cdc0c5eb5dc702d8cee0a774b6e43f0bca00f9f854ada48f"
+    },
+    "sellers_lookup": {
+      "status": "ok",
+      "sql": "SELECT * FROM dune.alexeykaranyuk.dataset_x402_sellers_lookup",
+      "table_path": "data/real/sellers_lookup.csv",
+      "rows": 1098,
+      "columns": [
+        "pay_to",
+        "domain",
+        "category",
+        "n_resources",
+        "total_calls",
+        "min_price",
+        "descr"
+      ],
+      "sha256": "95cdffc48fef46461b906325be8e3b42600b8ac4c8356f3caec051fdba95eef5"
+    },
+    "facilitators": {
+      "status": "ok",
+      "sql": "SELECT * FROM dune.twzrd_analyst.dataset_twzrd_x402_facilitators",
+      "table_path": "data/real/facilitators.csv",
+      "rows": 18,
+      "columns": [
+        "facilitator_id",
+        "snapshot_day",
+        "status",
+        "payments",
+        "payers",
+        "merchants",
+        "usdc_volume",
+        "first_seen",
+        "last_seen",
+        "active_days",
+        "active_day_pct"
+      ],
+      "sha256": "2b08ff5f4efc9bfeb04c91d1dc89772b83725d7a41480c27cc0a2287b3aa7a2c"
+    },
+    "facilitator_hhi_monthly": {
+      "status": "ok",
+      "sql": "SELECT * FROM dune.twzrd_analyst.dataset_twzrd_x402_v3_facilitator_hhi_concentration ORDER BY mo",
+      "table_path": "data/real/facilitator_hhi_monthly.csv",
+      "rows": 8,
+      "columns": [
+        "mo",
+        "active_facils",
+        "hhi_volume",
+        "hhi_txcount",
+        "top_facil_vol_pct"
+      ],
+      "sha256": "6791e90f8798eda7505fb6baf89aeb09db89fa614bbd8829dbcc1293ee72e02f"
+    },
+    "keyrock_chain_daily": {
+      "status": "ok",
+      "sql": "SELECT * FROM dune.keyrock.dataset_x402_data ORDER BY date",
+      "table_path": "data/real/keyrock_chain_daily.csv",
+      "rows": 55,
+      "columns": [
+        "date",
+        "base",
+        "solana",
+        "total"
+      ],
+      "sha256": "23611eb6dac7ee5964da2ea94982a28bc2dd554fa53ad62e9c7b021586a2fd26"
+    },
+    "monthly_timeseries": {
+      "status": "ok",
+      "sql": "SELECT * FROM dune.twzrd_analyst.dataset_twzrd_x402_monthly ORDER BY month",
+      "table_path": "data/real/monthly_timeseries.csv",
+      "rows": 12,
+      "columns": [
+        "month",
+        "payments",
+        "payers",
+        "merchants",
+        "usdc_volume"
+      ],
+      "sha256": "bc9697733bb769a6e4282523dddf53ddb9b6d6887faf1fcf05cf198ccc782bf8"
+    },
+    "daily_timeseries": {
+      "status": "ok",
+      "sql": "SELECT * FROM dune.twzrd_analyst.dataset_twzrd_x402_daily ORDER BY day",
+      "table_path": "data/real/daily_timeseries.csv",
+      "rows": 315,
+      "columns": [
+        "day",
+        "total_usdc",
+        "payments",
+        "active_payers",
+        "coinbase",
+        "payai",
+        "dexter",
+        "figment",
+        "openfacilitator",
+        "openx402",
+        "cascade",
+        "three_ws",
+        "ultravioletadao",
+        "retired",
+        "other"
+      ],
+      "sha256": "e18b0ad452327ba58eef75e13318cadf16ec38940dd36a3c7aa9224bdac0fb64"
+    },
+    "raw_x402_historical_weekly": {
+      "status": "ok",
+      "sql": "SELECT blockchain, week, SUM(tx_count) AS tx_count, SUM(total_spend_usd) AS total_spend_usd, COUNT(DISTINCT payer_wallet) AS payers, COUNT(DISTINCT facilitator_name) AS facilitators FROM dune.kundeus.result_raw_x402_historical GROUP BY blockchain, week ORDER BY week",
+      "table_path": "data/real/raw_x402_historical_weekly.csv",
+      "rows": 74,
+      "columns": [
+        "blockchain",
+        "week",
+        "tx_count",
+        "total_spend_usd",
+        "payers",
+        "facilitators"
+      ],
+      "sha256": "2e1197c97efc6dfccf96cb4a9ac6cad2a26c3ca8874c4d59ac026b2018442e4c"
+    },
+    "distinct_payers_overall": {
+      "status": "ok",
+      "sql": "SELECT COUNT(DISTINCT payer_wallet) AS n FROM dune.kundeus.result_raw_x402_historical",
+      "table_path": "data/real/distinct_payers_overall.csv",
+      "rows": 1,
+      "columns": [
+        "n"
+      ],
+      "sha256": "b16e6fc35bae7259c6cc97f630b23377568d959594db780014307e4263ab4729"
+    },
+    "distinct_payers_by_chain": {
+      "status": "ok",
+      "sql": "SELECT blockchain, COUNT(DISTINCT payer_wallet) AS payers, COUNT(DISTINCT facilitator_name) AS facilitators, MIN(week) AS first_week, MAX(week) AS last_week, SUM(tx_count) AS tx, SUM(total_spend_usd) AS vol FROM dune.kundeus.result_raw_x402_historical GROUP BY blockchain ORDER BY vol DESC",
+      "table_path": "data/real/distinct_payers_by_chain.csv",
+      "rows": 3,
+      "columns": [
+        "blockchain",
+        "payers",
+        "facilitators",
+        "first_week",
+        "last_week",
+        "tx",
+        "vol"
+      ],
+      "sha256": "0fcff32f78904fa41179065648a235dca274f80cc7c0bda66dde8f18fd67a238"
+    },
+    "overall_span": {
+      "status": "ok",
+      "sql": "SELECT MIN(week) AS first_week, MAX(week) AS last_week, SUM(tx_count) AS tx, SUM(total_spend_usd) AS vol, COUNT(DISTINCT facilitator_name) AS facilitators FROM dune.kundeus.result_raw_x402_historical",
+      "table_path": "data/real/overall_span.csv",
+      "rows": 1,
+      "columns": [
+        "first_week",
+        "last_week",
+        "tx",
+        "vol",
+        "facilitators"
+      ],
+      "sha256": "2cf82df57c7d3301341ba2a3b43f1d8818e52fd0840b4d0a1bef5143baf43153"
+    },
+    "facilitator_share": {
+      "status": "ok",
+      "sql": "SELECT facilitator_name, SUM(tx_count) AS tx, SUM(total_spend_usd) AS vol FROM dune.kundeus.result_raw_x402_historical GROUP BY facilitator_name ORDER BY vol DESC",
+      "table_path": "data/real/facilitator_share.csv",
+      "rows": 27,
+      "columns": [
+        "facilitator_name",
+        "tx",
+        "vol"
+      ],
+      "sha256": "1460a71238ebc7f9e7e15cfdb71e0a3139fd7fc3b3d709e0aba9ed78b97cac4e"
+    },
+    "settlement_router_stats": {
+      "status": "ok",
+      "sql": "SELECT COUNT(*) AS n,\n   approx_percentile(CAST(amount AS double)/1e6, 0.10) AS p10,\n   approx_percentile(CAST(amount AS double)/1e6, 0.25) AS p25,\n   approx_percentile(CAST(amount AS double)/1e6, 0.50) AS p50,\n   approx_percentile(CAST(amount AS double)/1e6, 0.75) AS p75,\n   approx_percentile(CAST(amount AS double)/1e6, 0.90) AS p90,\n   AVG(CAST(amount AS double)/1e6) AS mean,\n   STDDEV(CAST(amount AS double)/1e6) AS sd\n   FROM x402x_base.settlementrouter_evt_settled",
+      "table_path": "data/real/settlement_router_stats.csv",
+      "rows": 1,
+      "columns": [
+        "n",
+        "p10",
+        "p25",
+        "p50",
+        "p75",
+        "p90",
+        "mean",
+        "sd"
+      ],
+      "sha256": "0a0ec366d122f1aed9e3153dad57c7f0e3f45956bbe2e346faeae9146b245691"
+    },
+    "settlement_router_buckets": {
+      "status": "ok",
+      "sql": "SELECT\n   SUM(CASE WHEN CAST(amount AS double)/1e6 < 0.01 THEN 1 ELSE 0 END) AS sub_cent,\n   SUM(CASE WHEN CAST(amount AS double)/1e6 >= 0.01 AND CAST(amount AS double)/1e6 < 0.10 THEN 1 ELSE 0 END) AS c01_10,\n   SUM(CASE WHEN CAST(amount AS double)/1e6 >= 0.10 AND CAST(amount AS double)/1e6 < 1 THEN 1 ELSE 0 END) AS c10_1,\n   SUM(CASE WHEN CAST(amount AS double)/1e6 >= 1 AND CAST(amount AS double)/1e6 < 10 THEN 1 ELSE 0 END) AS c1_10,\n   SUM(CASE WHEN CAST(amount AS double)/1e6 >= 10 THEN 1 ELSE 0 END) AS c10plus,\n   COUNT(*) AS total\n   FROM x402x_base.settlementrouter_evt_settled",
+      "table_path": "data/real/settlement_router_buckets.csv",
+      "rows": 1,
+      "columns": [
+        "sub_cent",
+        "c01_10",
+        "c10_1",
+        "c1_10",
+        "c10plus",
+        "total"
+      ],
+      "sha256": "50d939b3c10e7dccd9da631892a118c200ff01a390059beffd91820e4b3c3415"
+    },
+    "settlement_router_tokens": {
+      "status": "ok",
+      "sql": "SELECT token, COUNT(*) AS n, AVG(CAST(amount AS double)/1e6) AS mean_usd FROM x402x_base.settlementrouter_evt_settled GROUP BY token ORDER BY n DESC LIMIT 10",
+      "table_path": "data/real/settlement_router_tokens.csv",
+      "rows": 1,
+      "columns": [
+        "token",
+        "n",
+        "mean_usd"
+      ],
+      "sha256": "504da9815f6af95b37941a8a18080eea613736ccbf38f88d8e82a0cc73bc5113"
+    }
+  }
+}

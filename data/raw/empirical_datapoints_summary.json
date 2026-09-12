@@ -1,0 +1,64 @@
+{
+  "source_census": "2025-2026 x402 Ecosystem Telemetry",
+  "project": "From Micropayments to Machine Commerce: What x402 Transaction Data Reveals About Agent Economic Behavior",
+  "authors": ["Oscar Underwood", "Roman Kurnovskii"],
+  "baseline_metrics": {
+    "cross_chain_totals": {
+      "base_mainnet": {
+        "cumulative_txns": 119000000,
+        "cumulative_volume_usd": 35000000.0,
+        "primary_settlement_asset": "USDC",
+        "primary_facilitators": ["CDP (Coinbase)", "PayAI", "Heurist", "Questflow"]
+      },
+      "solana_mainnet": {
+        "cumulative_txns": 38600000,
+        "cumulative_volume_usd": 7900000.0,
+        "weekly_volume_market_share_pct": 51.0,
+        "primary_settlement_asset": "USDC (SPL)",
+        "frameworks": ["solana-foundation/pay", "x402/svm"]
+      },
+      "aggregate_all_chains": {
+        "cumulative_txns": 157600000,
+        "cumulative_volume_usd": 42900000.0
+      }
+    },
+    "ticket_size_distribution_shift": {
+      "metric": "Transaction size composition shift (Chainalysis data)",
+      "sub_cent_fraction": {
+        "early_adoption_pct": 46.0,
+        "current_mature_pct": 4.0
+      },
+      "dollar_plus_fraction": {
+        "early_adoption_pct": 49.0,
+        "current_mature_pct": 95.0
+      },
+      "average_transaction_usd": {
+        "min": 0.20,
+        "max": 0.30
+      }
+    },
+    "market_structure_concentration": {
+      "active_unique_sellers": 477,
+      "active_unique_buyers": 4400,
+      "buyer_to_seller_ratio": 9.224,
+      "virtuals_protocol_acp": {
+        "daily_cleared_volume_usd": 34810.0,
+        "active_sellers": 2,
+        "active_buyers": 3700,
+        "top_seller_concentration_pct": 100.0
+      },
+      "functional_service_categories": [
+        "reasoning",
+        "data",
+        "media",
+        "search",
+        "social",
+        "infrastructure",
+        "trading"
+      ]
+    },
+    "dune_dataset_references": [
+      "dune.kundeus.result_raw_x402_historical"
+    ]
+  }
+}
