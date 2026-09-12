@@ -1,26 +1,38 @@
 # Sub-Dollar Machine Commerce: A Census-Scale Analysis of Real x402 On-Chain Payments
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22726373.svg)](https://doi.org/10.5281/zenodo.22726373)
+
 **Authors:** Oscar Underwood, Roman Kurnovskii
 
-**Artifact repository:** https://github.com/romankurnovskii/rnd-2026-sub-dollar-machine-commerce (private)
+**Artifact repository:** https://github.com/romankurnovskii/rnd-2026-sub-dollar-machine-commerce (private)  
+**Zenodo Permanent Record:** https://doi.org/10.5281/zenodo.22726373  
 **Paper:** Sub-Dollar Machine Commerce: A Census-Scale Analysis of Real x402 On-Chain Payments
 
 ## Abstract
 
-Autonomous software agents increasingly pay for API calls and compute over the HTTP 402 (x402) payment protocol, yet the empirical economics of these machine payments remain poorly characterised. We analyse a census-scale extract of real x402 settlement activity assembled from public Dune Analytics tables: 143,785,721 transactions and USD 42,818,828.87 of settled value across Base, Solana and Polygon between May and December 2025. Contrary to the prevailing narrative that machine commerce has migrated to multi-dollar compound transactions, we find that x402 remains micropayment-dominated. The volume-weighted average payment is USD 0.2717, sub-cent payments are 28.50% of all payments, and payments of USD 1 or more are only 7.96% of transaction count (though they carry 72.45% of value). Merchant revenue is highly concentrated: the top 1% of 12,065 merchants receives 93.0% of revenue. Concentration is even more pronounced at the settlement-infrastructure layer, where the monthly facilitator Herfindahl-Hirschman index ranges from 3,426 to 8,994 and a single facilitator accounts for roughly 62% of settled volume. Endpoint list prices are highly dispersed (median USD 0.0100, coefficient of variation 12.91), and a decoded transaction-level source confirms this directly: across 433,694 settled events the median payment is USD 0.001173 and 94.85% are below USD 0.01. This rejects the hypothesis of a tight algorithmic clearing corridor. Settlement is Base-dominant (82.55% of volume) with Solana a persistent minority (17.44%). These results reframe machine commerce as a high-volume, sub-dollar API economy whose principal concentration risk lies in the facilitator layer rather than among merchants.
+Autonomous software agents are increasingly transacting over the HTTP 402 (x402) protocol, yet the empirical economics of machine-to-machine commerce remain largely uncharacterized. The prevailing industry narrative assumes a migration toward multi-dollar, compound transactions. To test this, we analyzed a census-scale dataset of 143.8 million x402 settlements—totaling $42.8M across Base, Solana, and Polygon (May–Dec 2025)—and found the exact opposite.
+
+Our analysis reveals three structural realities of the machine economy:
+
+- **The Sub-Dollar Reality:** Machine commerce is overwhelmingly micropayment-driven. The volume-weighted average payment is just $0.27, and 28.5% of all transactions are sub-cent. Payments ≥$1 carry 72.5% of the total value but represent less than 8% of network traffic.
+- **Extreme Centralization:** The top 1% of merchants capture 93.0% of all revenue. This bottleneck is even more pronounced at the settlement infrastructure layer, where a single facilitator controls ~62% of the total settled volume.
+- **Wild Price Dispersion & Network Dominance:** Endpoint list prices are highly erratic (median $0.01, CV 12.91), decisively rejecting the hypothesis of a tight, efficient algorithmic clearing corridor. Furthermore, settlement is highly skewed toward Base (82.5% of volume), with Solana holding a persistent minority (17.4%).
+
+These findings dismantle the myth of complex machine commerce, reframing the x402 ecosystem as a high-volume, sub-dollar API economy where the true concentration risk lies in settlement infrastructure, rather than among merchants.
 
 ## Citation
 
 If you use this artifact, please cite the paper and this repository:
 
-`bibtex
-@misc{rnd-2026-sub-dollar-machine-commerce,
+```bibtex
+@misc{underwood2026subdollar,
   title = {Sub-Dollar Machine Commerce: A Census-Scale Analysis of Real x402 On-Chain Payments},
   author = {Oscar Underwood and Roman Kurnovskii},
   year = {2026},
-  url = {https://github.com/romankurnovskii/rnd-2026-sub-dollar-machine-commerce}
+  doi = {10.5281/zenodo.22726373},
+  url = {https://doi.org/10.5281/zenodo.22726373}
 }
-`
+```
 
 Machine-readable metadata: see [CITATION.cff](./CITATION.cff).
 
